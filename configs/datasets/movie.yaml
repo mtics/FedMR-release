@@ -1,0 +1,15 @@
+# Common Features
+USER_ID_FIELD: 'userID'
+ITEM_ID_FIELD: 'itemID'
+RATING_FIELD: 'rating'
+TIME_FIELD: 'timestamp'
+
+inter_file_name: 'inter.csv'
+
+# name of features
+vision_feature_file: 'image_features.npy'
+text_feature_file: 'text_features.npy'
+similarity_file: 'similarity.npy'
+user_graph_dict_file: 'user_graph_dict.npy'
+
+field_separator: ","

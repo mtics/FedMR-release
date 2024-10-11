@@ -1,0 +1,24 @@
+embedding_size: 512
+feat_embed_dim: 64
+
+is_federated: True
+is_multimodal_model: True
+
+learner: 'SGD'
+
+fusion_module: 'moe' # 'moe', 'sum', 'attention', 'mlp', 'gate'
+num_heads: 8 # number of heads in the attention module
+
+
+alpha: [ 1e-1,1e-2,1e-3,1e-4 ]
+beta: [ 1e-1,1e-2,1e-3,1e-4 ]
+lr: [ 1e-1,1e-2,1e-3,1e-4 ]
+l2_reg: [ 1e-4,1e-5,1e-6,1e-7,1e-8 ]
+
+use_neg_sampling: True
+
+hyper_parameters: [ "alpha", "beta", "lr", "l2_reg" ]
+
+type: "Test"
+comment: "Test0"
+

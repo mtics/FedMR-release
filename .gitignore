@@ -1,0 +1,14 @@
+logs/*
+.idea/*
+.ipynb_checkpoints/*
+__pycache__/*
+configs/private.py
+datasets/*
+results/*
+outputs/*
+logs/
+log/
+runs/*
+datasets/*
+venv/*
+*.pyc

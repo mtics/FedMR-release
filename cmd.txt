@@ -1,0 +1,91 @@
+--dataset KU
+--dataset DY
+--dataset Dance
+--dataset Food
+--dataset Movie
+--dataset Baby
+
+
+ps aux|grep python|grep -v grep|cut -c 9-15|xargs kill -15
+
+
+conda activate FedMR
+cd E:\Workspace\Research\Mine\FedMR
+python main.py --model FedAvg --dataset KU --type client --comment 0.5
+
+conda activate FedMR
+cd E:\Workspace\Research\Mine\FedMR
+python main.py --model FCF --dataset KU --type client --comment 0.5
+
+conda activate FedMR
+cd E:\Workspace\Research\Mine\FedMR
+python main.py --model FedNCF --dataset KU --type client --comment 0.5
+
+conda activate FedMR
+cd E:\Workspace\Research\Mine\FedMR
+python main.py --model PFedRec --dataset KU --type client --comment 0.5
+
+conda activate FedMR
+cd E:\Workspace\Research\Mine\FedMR
+python main.py --model FedRAP --dataset KU --type client --comment 0.5
+
+
+
+
+conda activate FedMR
+cd E:\Workspace\Research\Mine\FedMR
+python main.py --model MMFedAvg --dataset KU --type client --comment 0.5
+
+conda activate FedMR
+cd E:\Workspace\Research\Mine\FedMR
+python main.py --model MMFCF --dataset KU --type client --comment 0.5
+
+conda activate FedMR
+cd E:\Workspace\Research\Mine\FedMR
+python main.py --model MMFedNCF --dataset KU --type client --comment 0.5
+
+conda activate FedMR
+cd E:\Workspace\Research\Mine\FedMR
+python main.py --model MMPFedRec --dataset KU --type client --comment 0.5
+
+conda activate FedMR
+cd E:\Workspace\Research\Mine\FedMR
+python main.py --model MMFedRAP --dataset KU --type client --comment 0.5
+
+
+
+--------------------------------------------------------------------------------- Remote [Linux] ---------------------------------------------------------------------------------
+
+UTS Server CMD:
+conda activate FedMR; cd ~/Data/Workspace/FedMR/
+
+UTS Server log path:
+
+/data/zhiwli/Workspace/FedMR/outputs/logs/autodl/
+
+/data/liyou/Workspace/FedMR/outputs/logs/autodl/
+
+
+查看进程：
+ps -aux | grep ^zhiwli
+
+ps -aux | grep ^liyou
+
+
+nohup python main.py --model FedRAP --dataset Food \
+    --type hyper --comment select --gpu_id 0 \
+    > outputs/logs/autodl/FedRAP.Food.hyper.alpha_beta.txt &
+
+nohup python main.py --model FedRAP --dataset Baby \
+    --type hyper --comment select --gpu_id 1 \
+    > outputs/logs/autodl/FedRAP.Baby.hyper.alpha_beta.txt &
+
+
+nohup python main.py --model FedRAP --dataset Dance \
+    --type hyper --comment select --gpu_id 0 \
+    > outputs/logs/autodl/FedRAP.Dance.hyper.select.txt &
+
+nohup python main.py --model FedRAP --dataset Movie \
+    --type hyper --comment select --gpu_id 1 \
+    > outputs/logs/autodl/FedRAP.Movie.hyper.select.txt &
+

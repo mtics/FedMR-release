@@ -1,0 +1,17 @@
+embedding_size: 512
+feat_embed_dim: 64
+
+is_federated: True
+is_multimodal_model: False
+
+learner: 'SGD'
+
+#lr: [ 1e-1,1e-2,1e-3,1e-4 ]
+#l2_reg: [ 1e-4,1e-5,1e-6,1e-7,1e-8 ]
+lr: 1e-1
+l2_reg: 1e-5
+
+use_neg_sampling: True
+
+hyper_parameters: [ ]
+
